@@ -1,6 +1,25 @@
 const fs = require('fs');
 const matter = require('gray-matter');
 
+/**
+ * @typedef {Object} ParsedNote
+ * @property {string} path - The path of the note file.
+ * @property {string} content - The content of the note file.
+ * @property {string} [md_parse_error] - Error message if frontmatter parsing fails.
+ */
+
+/**
+ * @typedef {Object} AppParserResult
+ * @property {Array<string>} columns - Array of column names.
+ * @property {Array<ParsedNote>} rows - Array of parsed notes.
+ */
+
+/**
+ * Parses notes in a given directory, ignoring specified directories, and returns the parsed data.
+ * @param {string} notesPath - The path to the directory containing notes.
+ * @param {Array<string>} [ignoredDirectories=['.git', '.trash', '.obsidian', '.gitignore']] - Array of directory names to ignore.
+ * @returns {AppParserResult} An object containing the columns and rows of parsed notes.
+ */
 let AppParser = (notesPath, ignoredDirectories) => {
     if (ignoredDirectories === undefined) {
         ignoredDirectories = ['.git', '.trash', '.obsidian', '.gitignore'];
