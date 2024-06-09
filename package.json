@@ -1,0 +1,14 @@
+{
+  "name": "my-notes",
+  "version": "1.0.0",
+  "description": "Just trying to parse my obsidian notes and convert them into a structured data format for a few things: - Mass parse them for editing - Try to unify the metadata I have them on - Gather statistics - Create an importer for another note app (ie import them into Notion etc)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
